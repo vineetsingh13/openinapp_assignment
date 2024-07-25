@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue">
+
+    <RelativeLayout
+        android:id="@+id/navbar"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/figtree_light"
+            android:text="Dashboard"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="@color/cardview_color"
+        app:layout_constraintTop_toBottomOf="@+id/navbar">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/greeting_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/figtree_light"
+                    android:text="Good morning"
+                    android:textColor="@color/grey"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Ajay Manva"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/figtree_light"
+                    android:textColor="@color/black"
+                    />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="16dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/view_analytics_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="View Analytics"
+                    app:icon="@drawable/baseline_show_chart_24"
+                    app:iconSize="25dp"
+                    android:fontFamily="@font/figtree_light"
+                    android:layout_marginTop="16dp"
+                    app:iconGravity="textStart"
+                    android:textStyle="bold"
+                    android:backgroundTint="@color/cardview_color"
+                    app:cornerRadius="4dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    app:iconTint="@color/black"
+                    android:padding="14dp"
+                    app:strokeColor="@color/border_color"
+                    app:strokeWidth="2dp"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/link_button_section"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="16dp"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/top_links_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Top Links"
+                        app:iconGravity="textStart"
+                        android:backgroundTint="@color/cardview_color"
+                        app:cornerRadius="4dp"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/figtree_light"
+                        android:textStyle="bold"
+                        android:textColor="@color/grey"
+                        android:padding="14dp"
+                        />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/recent_links_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recent Links"
+                        app:iconGravity="textStart"
+                        android:backgroundTint="@color/cardview_color"
+                        app:cornerRadius="4dp"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/figtree_light"
+                        android:textStyle="bold"
+                        android:textColor="@color/grey"
+                        android:padding="14dp"
+                        android:layout_toRightOf="@id/top_links_btn"
+                        />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/search_btn"
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        app:iconGravity="textStart"
+                        android:backgroundTint="@color/search_icon_color"
+                        app:cornerRadius="8dp"
+                        app:icon="@drawable/baseline_search_24"
+                        app:iconTint="@color/black"
+                        app:iconSize="24dp"
+                        app:strokeColor="@color/border_color"
+                        app:strokeWidth="2dp"
+                        android:paddingEnd="14dp"
+                        android:layout_alignParentEnd="true"
+                        />
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/all_links_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="View All Links"
+                    app:icon="@drawable/baseline_insert_link_24"
+                    app:iconSize="25dp"
+                    android:fontFamily="@font/figtree_light"
+                    android:layout_marginTop="16dp"
+                    app:iconGravity="textStart"
+                    android:textStyle="bold"
+                    android:backgroundTint="@color/cardview_color"
+                    app:cornerRadius="4dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    app:iconTint="@color/black"
+                    android:padding="14dp"
+                    app:strokeColor="@color/border_color"
+                    app:strokeWidth="2dp"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/whatsapp_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Talk with us"
+                    app:icon="@drawable/whatsapp"
+                    app:iconSize="25dp"
+                    android:fontFamily="@font/figtree_light"
+                    android:layout_marginTop="16dp"
+                    app:iconGravity="textStart"
+                    android:textStyle="bold"
+                    android:backgroundTint="@color/green"
+                    app:cornerRadius="4dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:gravity="start|bottom"
+                    app:iconTint="@color/whatsapp_icon"
+                    android:padding="20dp"
+                    app:strokeColor="@color/border_color"
+                    app:strokeWidth="2dp"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/question_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Frequently Asked Questions"
+                    app:icon="@drawable/question"
+                    app:iconSize="35dp"
+                    android:fontFamily="@font/figtree_light"
+                    android:layout_marginTop="4dp"
+                    app:iconGravity="textStart"
+                    android:textStyle="bold"
+                    android:backgroundTint="@color/question_button"
+                    app:cornerRadius="4dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:gravity="start|center"
+                    android:padding="20dp"
+                    app:strokeColor="@color/border_color"
+                    app:strokeWidth="2dp"
+                    />
+            </LinearLayout>
+        </ScrollView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

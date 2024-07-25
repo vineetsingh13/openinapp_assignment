@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="15dp"
+    android:layout_margin="10dp"
+    android:backgroundTint="@color/cardview_color">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/image_icon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="8dp"
+                android:scaleType="fitCenter"/>
+
+            <TextView
+                android:id="@+id/sample_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sample link name"
+                android:layout_toEndOf="@id/image_icon"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:layout_toStartOf="@id/clicks"
+                android:layout_marginStart="15dp"/>
+
+            <TextView
+                android:id="@+id/clicks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2322"
+                android:layout_alignParentEnd="true"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginEnd="8dp"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/main_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="https://example.com"
+            android:textSize="14sp"
+            android:textColor="@color/blue"
+            android:background="@color/lightblue"
+            android:padding="12dp"/>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
