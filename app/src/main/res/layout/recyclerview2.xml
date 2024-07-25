@@ -5,7 +5,6 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="8dp"
-    app:cardElevation="15dp"
     android:layout_margin="10dp"
     android:backgroundTint="@color/cardview_color">
 
@@ -27,42 +26,106 @@
                 android:layout_margin="8dp"
                 android:scaleType="fitCenter"/>
 
-            <TextView
-                android:id="@+id/sample_link"
+            <LinearLayout
+                android:id="@+id/link_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="sample link name"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
                 android:layout_toEndOf="@id/image_icon"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:layout_marginTop="8dp"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:layout_toStartOf="@id/clicks"
-                android:layout_marginStart="15dp"/>
+                android:layout_toStartOf="@id/clicks_layout">
 
-            <TextView
-                android:id="@+id/clicks"
+                <TextView
+                    android:id="@+id/sample_link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="sample link name"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/figtree_light"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:layout_marginStart="6dp"/>
+
+                <TextView
+                    android:id="@+id/link_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="22 Aug 2022"
+                    android:textSize="10sp"
+                    android:fontFamily="@font/figtree_light"
+                    android:textColor="@color/grey"
+                    android:layout_marginTop="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:layout_marginStart="6dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/clicks_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2322"
+                android:orientation="vertical"
                 android:layout_alignParentEnd="true"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:layout_marginEnd="8dp"/>
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="16dp"
+                >
+
+                <TextView
+                    android:id="@+id/clicks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2322"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/figtree_light"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:id="@+id/clicks_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="clicks"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/figtree_light"
+                    android:textStyle="bold"
+                    android:textColor="@color/grey"
+                    android:layout_marginEnd="8dp"/>
+            </LinearLayout>
         </RelativeLayout>
 
-        <TextView
-            android:id="@+id/main_link"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="https://example.com"
-            android:textSize="14sp"
-            android:textColor="@color/blue"
-            android:background="@color/lightblue"
-            android:padding="12dp"/>
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/main_link"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="https://example.com"
+                android:textSize="14sp"
+                android:textColor="@color/blue"
+                android:fontFamily="@font/figtree_light"
+                android:background="@color/lightblue"
+                android:layout_alignParentStart="true"
+                android:padding="15dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/search_btn"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                app:iconGravity="textStart"
+                android:backgroundTint="@color/lightblue"
+                app:cornerRadius="8dp"
+                app:icon="@drawable/baseline_content_copy_24"
+                app:iconTint="@color/blue"
+                app:iconSize="16dp"
+                android:layout_alignParentEnd="true"
+                />
+        </RelativeLayout>
 
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

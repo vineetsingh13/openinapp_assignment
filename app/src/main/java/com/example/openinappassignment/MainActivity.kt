@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.openinappassignment.adapters.MainActivityAdapter
+import com.example.openinappassignment.adapters.MainActivityAdapter2
 import com.example.openinappassignment.databinding.ActivityMainBinding
 import com.example.openinappassignment.ui.MainActivityViewModel
 
@@ -26,12 +27,20 @@ class MainActivity : AppCompatActivity() {
         mainActivityViewModel=ViewModelProvider(this).get(MainActivityViewModel::class.java)
 
         binding.recyclerView2.layoutManager=LinearLayoutManager(this)
+        binding.recyclerView1.layoutManager=LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
 
-        mainActivityViewModel.getRecentLinks()!!.observe(this, Observer { response->
+        mainActivityViewModel.getRecentLinks().observe(this, Observer { response->
 
             response.let {
                 val adapter=MainActivityAdapter(response)
                 binding.recyclerView2.adapter=adapter
+            }
+        })
+
+        mainActivityViewModel.getRecyclerView1data().observe(this, Observer { response ->
+            response.let {
+                val adapter=MainActivityAdapter2(response,this)
+                binding.recyclerView1.adapter=adapter
             }
         })
     }

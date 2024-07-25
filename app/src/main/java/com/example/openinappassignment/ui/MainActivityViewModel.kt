@@ -10,7 +10,7 @@ class MainActivityViewModel :ViewModel() {
 
     var links=MutableLiveData<List<RecentLinks>>()
 
-    lateinit var rcdata:RecyclerView1data
+    var rcdata=MutableLiveData<RecyclerView1data>()
 
     fun getRecentLinks():MutableLiveData<List<RecentLinks>>{
 
@@ -18,7 +18,7 @@ class MainActivityViewModel :ViewModel() {
         return links
     }
 
-    fun getRecyclerView1data():RecyclerView1data{
+    fun getRecyclerView1data():MutableLiveData<RecyclerView1data>{
         rcdata=MainActivityRepo.getRecyclerView1data()
         return rcdata
     }

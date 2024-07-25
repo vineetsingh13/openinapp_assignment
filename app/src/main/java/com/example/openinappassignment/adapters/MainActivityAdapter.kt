@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.openinappassignment.Model.RecentLinks
 import com.example.openinappassignment.databinding.Recyclerview2Binding
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 
 class MainActivityAdapter(val links:List<RecentLinks>): RecyclerView.Adapter<ListViewHolder>() {
@@ -25,6 +27,8 @@ class MainActivityAdapter(val links:List<RecentLinks>): RecyclerView.Adapter<Lis
             holder.clicks.text=item.totalClicks.toString()
             holder.sample.text=item.title.toString()
             holder.main.text=item.webLink.toString()
+            val date= formatDateString(item.createdAt)
+            holder.binding.linkDate.text=date
         }
     }
 
@@ -42,4 +46,13 @@ class ListViewHolder(val binding: Recyclerview2Binding,): RecyclerView.ViewHolde
     val sample=binding.sampleLink
     val main=binding.mainLink
 
+}
+
+fun formatDateString(dateString: String): String {
+    // Original date format
+    val originalFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH)
+    // Desired date format
+    val desiredFormat = SimpleDateFormat("dd MMM yyyy", Locale.ENGLISH)
+    val date = originalFormat.parse(dateString)
+    return desiredFormat.format(date)
 }

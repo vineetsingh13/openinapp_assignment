@@ -14,20 +14,25 @@ object MainActivityRepo {
 
     var recentLinks=MutableLiveData<List<RecentLinks>>()
 
-    fun getRecyclerView1data(): RecyclerView1data{
+    fun getRecyclerView1data(): MutableLiveData<RecyclerView1data>{
         val service=Service.buildService(apiService1::class.java)
         val call=service.getLinks()
 
-        var recyclerView1data=RecyclerView1data(0,"","","")
+        var recyclerView1data=MutableLiveData<RecyclerView1data>()
         call.enqueue(object :Callback<ApiResponse>{
             override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
 
                 val data=response.body()
 
-                recyclerView1data.todayClicks = data!!.todayClicks
-                recyclerView1data.topSource = data.topSource
-                recyclerView1data.topLocation = data.topLocation
-                recyclerView1data.startTime = data.startTime
+                if (data != null) {
+                    val newRecyclerView1data = RecyclerView1data(
+                        todayClicks = data.totalClicks,
+                        topSource = data.topSource,
+                        topLocation = data.topLocation,
+                        startTime = data.startTime
+                    )
+                    recyclerView1data.value = newRecyclerView1data
+                }
 
             }
 

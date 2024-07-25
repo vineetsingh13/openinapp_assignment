@@ -79,9 +79,10 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_view1"
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
+                    android:layout_height="160dp"
                     android:layout_marginTop="16dp"
                     android:orientation="horizontal"
+                    android:background="@color/cardview_color"
                     />
 
                 <com.google.android.material.button.MaterialButton
@@ -165,7 +166,7 @@
                     android:layout_height="500dp"
                     android:layout_marginTop="16dp"
                     android:orientation="vertical"
-                    android:background="@color/white"
+                    android:background="@color/cardview_color"
                     />
 
                 <com.google.android.material.button.MaterialButton
@@ -197,7 +198,7 @@
                     app:icon="@drawable/whatsapp"
                     app:iconSize="25dp"
                     android:fontFamily="@font/figtree_light"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="28dp"
                     app:iconGravity="textStart"
                     android:textStyle="bold"
                     android:backgroundTint="@color/green"
