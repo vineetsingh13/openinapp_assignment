@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="8dp"
     android:layout_margin="10dp"
-    android:backgroundTint="@color/cardview_color">
+    android:backgroundTint="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -113,13 +113,12 @@
                 android:layout_alignParentStart="true"
                 android:padding="15dp"/>
 
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/search_btn"
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                app:iconGravity="textStart"
                 android:backgroundTint="@color/lightblue"
-                app:cornerRadius="8dp"
+                android:background="@android:color/transparent"
                 app:icon="@drawable/baseline_content_copy_24"
                 app:iconTint="@color/blue"
                 app:iconSize="16dp"
